@@ -1,6 +1,6 @@
 import { products } from "./products.js";
 import { formatCurrency } from "./money.js";
-
+import { cart } from "./cart.js";
 // Toogle menu for navbar
 const navDialog = document.getElementById("nav-dialog");
 const toggleButton = document.getElementById("toggleButton");
@@ -37,7 +37,7 @@ mostLovedProducts.forEach((product) => {
             product.pricePaise
           )}</p>
           <button
-            class="add-to-cart h-10 w-28 bg-blue-500 text-white font-semibold rounded-lg mt-2"
+            class="add-to-cart h-10 w-28 bg-blue-500 text-white font-semibold rounded-lg mt-2 js-add-to-cart"
             data-product-id="${product.id}"
             data-product-name="${product.name}"
             data-product-price="${product.pricePaise}"
@@ -77,7 +77,7 @@ for (const [category, products] of Object.entries(categorizedProducts)) {
                 product.pricePaise
               )}</p>
               <button
-                class="bg-yellow-700 text-white px-4 py-2 mt-2 rounded-lg hover:bg-red-800 add-to-cart"
+                class="bg-yellow-700 text-white px-4 py-2 mt-2 rounded-lg hover:bg-red-800 add-to-cart js-add-to-cart"
                 data-product-id="${product.id}"
                 data-product-name="${product.name}"
                 data-product-price="${product.pricePaise}"
@@ -166,3 +166,33 @@ function initializeAddToCartButtons() {
 
 // Initialize the "Add to Plate" buttons
 initializeAddToCartButtons();
+
+document.querySelectorAll('.js-add-to-cart').forEach((button) =>{
+button.addEventListener('click', ()=>{
+const productId = button.dataset.productId;
+
+let matchingItem;
+
+cart.forEach((item) =>{
+  if (productId === item.productId){
+matchingItem = item;
+  }
+})
+if(matchingItem){
+  matchingItem.quantity +=1;
+}else{
+  cart.push({
+    productId : productId,
+    quantity : 1
+  });
+
+}
+let cartQuantity = 0;
+
+cart.forEach((item)=>{
+cartQuantity += item.quantity
+});
+document.querySelector('.js-cart-quantity').innerHTML = cartQuantity
+
+});
+});
