@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+  />
+  <title>Cart</title>
+</head>
+<body class="bg-gray-300">
+    <header class="w-full text-xl text-white p-5 bg-red-900">
+        <div class="flex justify-between items-center flex-wrap relative">
+          <!-- Logo Section -->
+          <div class="mr-auto">
+            <img
+              src="logo/crazyforfood-high-resolution-logo-white-transparent.png"
+              alt="Logo"
+              class="h-32 hover:animate-spin-slow"
+            />
+          </div>
+  
+          <!-- Menu Items (visible on medium and larger screens) -->
+          <ul class="items-center gap-5 cursor-pointer text-2xl hidden md:flex">
+            <a href="index.html"
+              ><li
+                class="hover:text-yellow-400 hover:font-semibold hover:animate-bounce"
+              >
+                Home
+              </li></a
+            >
+            <li
+              class="hover:text-yellow-400 hover:font-semibold hover:animate-bounce"
+            >
+              <a href="#">Menu</a>
+            </li>
+            <li
+              class="hover:text-yellow-400 hover:font-semibold hover:animate-bounce"
+            >
+              <i class="fa-solid fa-basket-shopping "><span class="text-lg ml-2 js-cart-quantity">0</span></i> 
+            </li>
+            <li
+              class="hover:text-yellow-400 hover:font-semibold hover:animate-bounce"
+            >
+              About
+            </li>
+            <li
+              class="hover:text-yellow-400 hover:font-semibold hover:animate-bounce"
+            >
+              Contact
+            </li>
+          </ul>
+  
+          <!-- Toggle Button for smaller screens (Hamburger icon) -->
+  
+          <button
+            id="toggleButton"
+            class="md:hidden p-4 text-2xl hover:border hover:border-white "
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+  
+          <button
+            class="text-2xl p-2 flex items-center justify-center hover:border hover:border-white md:hidden"
+          >
+            <i class="fa-solid fa-basket-shopping"><span class="text-lg ml-2 js-cart-quantity">0</span></i>
+          </button>
+  
+          <!-- Close Button for smaller screens (X icon) -->
+          <button
+            id="closeButton"
+            class="md:hidden p-4 text-4xl hover:border hover:border-white hidden"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+  
+        <!-- Mobile Menu (hidden by default, shows when toggled) -->
+        <nav id="nav-dialog" class="menu hidden md:hidden bg-red-900 text-white">
+          <ul class="flex flex-col items-end gap-5 p-5">
+            <li>
+              <a
+                href="index.html"
+                class="hover:text-yellow-400 hover:font-semibold"
+                >Home</a
+              >
+            </li>
+  
+            <li>
+              <a href="#" class="hover:text-yellow-400 hover:font-semibold"
+                >Gallery</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-yellow-400 hover:font-semibold"
+                >About</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-yellow-400 hover:font-semibold"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 py-8">
+    <h2 class="text-3xl font-semibold text-center mb-6">Your Cart</h2>
+    <div class="bg-white p-6 rounded shadow-lg">
+      <!-- Item List -->
+      <div class="flex flex-col space-y-4">
+        <!-- Example Cart Item -->
+        <div class="flex items-center justify-between border-b pb-4">
+          <div class="flex items-center space-x-4">
+            <img src="foodimg/north_indian.jpg" alt="Dish Image" class="h-16 w-16 rounded object-cover" />
+            <div>
+              <h3 class="text-lg font-semibold">North-Indian Thali</h3>
+              <p class="text-sm text-gray-500">Quantity: 1</p>
+            </div>
+          </div>
+          <p class="text-lg font-bold">$12.99</p>
+        </div>
+
+        <div class="flex items-center justify-between border-b pb-4">
+          <div class="flex items-center space-x-4">
+            <img src="foodimg/italian_food.jpg" alt="Dish Image" class="h-16 w-16 rounded object-cover" />
+            <div>
+              <h3 class="text-lg font-semibold">Pasta Italiano</h3>
+              <p class="text-sm text-gray-500">Quantity: 2</p>
+            </div>
+          </div>
+          <p class="text-lg font-bold">$24.99</p>
+        </div>
+      </div>
+
+      <!-- Cart Summary -->
+      <div class="mt-6 border-t pt-4">
+        <div class="flex justify-between text-lg font-semibold">
+          <span>Subtotal</span>
+          <span>$37.98</span>
+        </div>
+        <div class="flex justify-between text-lg font-semibold mt-2">
+          <span>Tax</span>
+          <span>$3.80</span>
+        </div>
+        <div class="flex justify-between text-xl font-bold mt-4">
+          <span>Total</span>
+          <span>$41.78</span>
+        </div>
+      </div>
+
+      <!-- Checkout Button -->
+      <div class="mt-6 text-center">
+        <button class="bg-red-700 text-white py-2 px-6 rounded hover:bg-red-600">Checkout</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-700 text-white py-10 mt-5">
+    <div class="container mx-auto px-4">
+      <p class="text-center text-sm">&copy; 2024 Crazy For Food. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
