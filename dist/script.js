@@ -1,6 +1,6 @@
 import { products } from "./products.js";
 import { formatCurrency } from "./money.js";
-import { cart } from "./cart.js";
+import { cart,addToCart } from "./cart.js";
 // Toogle menu for navbar
 const navDialog = document.getElementById("nav-dialog");
 const toggleButton = document.getElementById("toggleButton");
@@ -13,7 +13,6 @@ function togglemenu() {
 }
 toggleButton.addEventListener("click", togglemenu);
 closeButton.addEventListener("click", togglemenu);
-
 
 // Loved-Dishes Section
 const lovedDishesContainer = document.querySelector("#most-loved-container");
@@ -167,32 +166,22 @@ function initializeAddToCartButtons() {
 // Initialize the "Add to Plate" buttons
 initializeAddToCartButtons();
 
-document.querySelectorAll('.js-add-to-cart').forEach((button) =>{
-button.addEventListener('click', ()=>{
-const productId = button.dataset.productId;
+// increase cart quantity feature
 
-let matchingItem;
+function updateCartQuantity(){
+  let cartQuantity = 0;
 
-cart.forEach((item) =>{
-  if (productId === item.productId){
-matchingItem = item;
-  }
-})
-if(matchingItem){
-  matchingItem.quantity +=1;
-}else{
-  cart.push({
-    productId : productId,
-    quantity : 1
+  cart.forEach((item) => {
+    cartQuantity += item.quantity;
   });
-
+  document.querySelector(".js-cart-quantity").innerHTML = cartQuantity;
 }
-let cartQuantity = 0;
 
-cart.forEach((item)=>{
-cartQuantity += item.quantity
-});
-document.querySelector('.js-cart-quantity').innerHTML = cartQuantity
-
-});
+document.querySelectorAll(".js-add-to-cart")
+.forEach((button) => {
+  button.addEventListener("click", () => {
+    const productId = button.dataset.productId;
+    addToCart(productId);    
+    updateCartQuantity(); 
+  });
 });
