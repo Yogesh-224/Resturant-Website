@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <title>Document</title>
+
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Section with background gif that includes the header and buttons -->
+    <div class="relative h-[500px] bg-cover bg-center" style="background-image: url('background.gif');">
+
+        <!-- Navbar over the background -->
+        <header class="absolute top-0 left-0 w-full text-xl text-white p-5">
+            <div class="flex justify-evenly items-center w-full flex-wrap">
+                <div class="mr-auto">
+                    <img src="logo/crazyforfood-high-resolution-logo-white-transparent.png" alt=""
+                        class="h-32 hover:animate-spin-slow">
+                </div>
+
+                <ul class="items-center gap-5 cursor-pointer font-bold text-xl hidden md:flex">
+                    <li class="hover:text-yellow-400 hover:font-semibold hover:animate-bounce">Home</li>
+                    <li class="hover:text-yellow-400 hover:font-semibold hover:animate-bounce"><a href="#">Menu</a></li>
+                    <li class="hover:text-yellow-400 hover:font-semibold hover:animate-bounce">Gallery</li>
+                    <li class="hover:text-yellow-400 hover:font-semibold hover:animate-bounce">About</li>
+                </ul>
+
+                <div class="hidden md:block pl-4">
+                    <button
+                        class="hover:text-yellow-400 ease-in cursor-pointer border-2 border-white rounded-3xl h-12 w-32 bg-green-800 shadow-xl font-medium">Contact
+                        Us</button>
+                </div>
+
+                <!-- Toggle menu for mobile screens -->
+                <div class="md:hidden sm:block mr-3">
+                    <button
+                        class="hover:text-yellow-400 cursor-pointer border-2 border-white rounded-3xl h-10 w-28 bg-green-800 shadow-xl font-thin text-xl">Contact
+                        Us</button>
+                </div>
+
+                <button id="toggleButton" class="md:hidden p-4 text-4xl hover:border hover:border-white" onclick="togglemenu()">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+
+
+                <div id="nav-dialog" class="fixed inset-0  p-4 h-[500px] bg-cover bg-center hidden"
+                    style="background-image: url('background.gif');">
+
+                    <div id="nav-bar" class="flex justify-between">
+                        <a href="#">
+                            <img src="logo/crazyforfood-high-resolution-logo-white-transparent.png" alt=""
+                                class="h-32 hover:animate-spin-slow">
+                        </a>
+                        <button id="closeButton" class="hidden p-4" onclick="togglemenu()">
+                            <i class="fa-solid fa-xmark text-4xl"></i>
+                        </button>
+                    </div>
+                    <ul class="flex flex-col items-end text-2xl font-sans p-6 cursor-pointer">
+                        <li class="hover:text-yellow-400 hover:font-semibold hover:animate-bounce">Home</li>
+                        <li class="hover:text-yellow-400 hover:font-semibold hover:animate-bounce"><a href="#">Menu</a>
+                        </li>
+                        <li class="hover:text-yellow-400 hover:font-semibold hover:animate-bounce">Gallery</li>
+                        <li class="hover:text-yellow-400 hover:font-semibold hover:animate-bounce">About</li>
+                    </ul>
+
+
+                    <div class="flex justify-center items-center flex-wrap mt-auto p-4">
+                        <div
+                            class="flex flex-col sm:flex-row sm:gap-4 gap-4 w-full max-w-xs sm:max-w-md md:max-w-lg justify-center items-center">
+                            <a href="table.php">
+                                <button
+                                    class="bg-button-clr text-white font-semibold text-lg py-3 px-4 rounded-lg hover:bg-blue-500 w-full sm:w-44 h-16 sm:h-24">
+                                    Book a table
+                                </button>
+                            </a>
+                            <button
+                                class="bg-button-clr text-white font-semibold text-lg py-3 px-4 rounded-lg hover:bg-blue-500 w-full sm:w-44 h-16 sm:h-24">
+                                Order Online
+                            </button>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </header>
+
+        <!-- Buttons in the middle of the background section -->
+        <div class="flex justify-center items-center flex-wrap h-full mt-auto p-4">
+            <div
+                class="flex flex-col sm:flex-row sm:gap-4 gap-4 w-full max-w-xs sm:max-w-md md:max-w-lg justify-center items-center">
+                <a href="table.php"><button
+                    class="bg-button-clr text-white font-semibold text-lg py-3 px-4 rounded-lg hover:bg-blue-500 w-full sm:w-44 h-16 sm:h-24">
+                    Book a table
+                </button></a>
+                <a href="onlineorder.html"><button
+                    class="bg-button-clr text-white font-semibold text-lg py-3 px-4 rounded-lg hover:bg-blue-500 w-full sm:w-44 h-16 sm:h-24">
+                    Order Online
+                </button></a>
+            </div>
+        </div>
+
+    </div>
+    <!-- Content Section -->
+    <div class="flex flex-col justify-center items-center bg-gray-300">
+        <h2 class="text-2xl md:text-4xl p-2 font-mono">Our Resturants</h2>
+        <p class="font-serif italic">8 cities,18 outlets and Infinite love</p>
+    </div>
+    
+    <div class="flex justify-evenly items-center flex-wrap bg-gray-300">
+
+        <div
+            class="w-96 border-black border-2 flex flex-col justify-around items-center p-5 md:p-6 mt-5 bg-red-900 text-white rounded-xl">
+            <img src="images/image2.jpg" alt="" class="h-80 w-80 object-cover rounded-lg border-white border-2">
+            <p class="p-2 text-lg">Crazy For Food Resturant,</p>
+            <p>Connaught Place,Delhi</p>
+        </div>
+
+        <div
+            class="w-96 border-black border-2 flex flex-col justify-around items-center p-4 md:p-6 mt-5 bg-red-900 text-white rounded-xl">
+            <img src="images/image5.jpg" alt="" class="h-80 w-80 object-cover rounded-lg border-white border-2">
+            <p class="p-2 text-lg">Crazy For Food Resturant,</p>
+            <p>Connaught Place,Delhi</p>
+        </div>
+
+        <div
+            class="w-96 border-black border-2 flex flex-col justify-around items-center p-4 md:p-6 mt-5 bg-red-900 text-white rounded-xl">
+            <img src="images/image6.jpg" alt="" class="h-80 w-80 object-cover rounded-lg border-white border-2">
+            <p class="p-2 text-lg">Crazy For Food Resturant,</p>
+            <p>Connaught Place,Delhi</p>
+        </div>
+
+        <div
+            class="w-96 border-black border-2 flex flex-col justify-around items-center p-4 md:p-6 mt-5 bg-red-900 text-white rounded-xl">
+            <img src="images/image7.jpg" alt="" class="h-80 w-80 object-cover rounded-lg border-white border-2">
+            <p class="p-2 text-lg">Crazy For Food Resturant,</p>
+            <p>Connaught Place,Delhi</p>
+        </div>
+
+        <div
+            class="w-96 border-transparent border-2 flex flex-col justify-around items-center p-4 md:p-6 mt-5 bg-red-900 text-white rounded-xl">
+            <img src="images/image3.jpg" alt="" class="h-80 w-80 object-cover rounded-lg border-white border-2">
+            <p class="p-2 text-lg">Crazy For Food Resturant,</p>
+            <p>Connaught Place,Delhi</p>
+        </div>
+
+        <div
+            class="w-96 border-black border-2 flex flex-col justify-around items-center p-4 md:p-6 mt-5 bg-red-900 text-white rounded-xl">
+            <img src="images/image4.jpg" alt="" class="h-80 w-80 object-cover rounded-lg border-white border-2">
+            <p class="p-2 text-lg">Crazy For Food Resturant,</p>
+            <p>Connaught Place,Delhi</p>
+        </div>
+
+    </div>
+
+    <footer class="bg-gray-800 text-white py-10 mt-5">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-lg font-bold mb-2">About Us</h3>
+                    <p class="text-sm">
+                        Crazy For Food is dedicated to providing the best dining experience with a variety of cuisines and exceptional service. Join us for a meal that you won't forget!
+                    </p>
+                </div>
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-lg font-bold mb-2">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-yellow-400">Home</a></li>
+                        <li><a href="#" class="hover:text-yellow-400">Menu</a></li>
+                        <li><a href="#" class="hover:text-yellow-400">Gallery</a></li>
+                        <li><a href="#" class="hover:text-yellow-400">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-yellow-400">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-yellow-400">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-lg font-bold mb-2">Subscribe to Our Newsletter</h3>
+                    <form action="#" method="POST" class="flex flex-col">
+                        <input type="email" placeholder="Enter your email" class="px-4 py-2 mb-2 rounded" required>
+                        <button type="submit" class="bg-yellow-500 text-gray-800 font-semibold py-2 rounded hover:bg-yellow-400">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+    
+            <div class="mt-8 border-t border-gray-600 pt-6">
+                <div class="flex justify-center space-x-4 mb-4">
+                    <a href="#" class="hover:text-yellow-400"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-yellow-400"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="hover:text-yellow-400"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-yellow-400"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <p class="text-center text-sm">&copy; 2024 Crazy For Food. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    
+
+    <!-- <script src="script.js"></script> -->
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>

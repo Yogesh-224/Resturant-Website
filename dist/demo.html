@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body>
+  // Popup before add-to-cart for quantity customisation
+// Select the modal container
+const modalContainer = document.querySelector(".modal-container");
+
+// Save the original HTML content of the modal-container
+const originalHTML = modalContainer.innerHTML;
+
+// Function to show the modal
+function showModal() {
+  const modalHTML = `
+    <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-10">
+      <div class="bg-gray-400 text-black p-6 rounded-lg w-2/3 h-auto">
+        <div class="flex items-center">
+          <p class="text-4xl font-extrabold">Please select the quantity</p>
+          <button class="ml-auto" id="cancel-btn">
+            <i class="fa-regular fa-rectangle-xmark text-4xl"></i>
+          </button>
+        </div>
+
+        <p class="p-2 text-xl font-semibold font-sans border-b-2 mt-2">Dish Name</p>
+
+        <form action="" class="p-4 text-xl">
+          <p class="p-2 font-semibold text-2xl">Choose your option</p>
+
+          <input type="radio" id="half-plate" name="plate-size" value="half-plate" />
+          <label for="half-plate" class="p-4">Half-plate (Serves 1) &nbsp; &nbsp; 300</label>
+          <br />
+
+          <input type="radio" id="full-plate" name="plate-size" value="full-plate" />
+          <label for="full-plate" class="p-4">Full-plate (Serves 2-3) &nbsp; 550/-</label><br />
+
+          <input type="submit" value="Submit" id="confirm-btn" class="h-16 w-52 bg-green-800 text-white rounded-xl mt-6" />
+        </form>
+      </div>
+    </div>
+  `;
+
+  // Insert the modalHTML into the modal-container
+  modalContainer.innerHTML = modalHTML;
+
+  // Attach event listener to the cancel button
+  const cancelBtn = document.getElementById("cancel-btn");
+  cancelBtn.addEventListener("click", () => {
+    // Revert modal-container back to its original HTML
+    modalContainer.innerHTML = lovedDishesHTML;
+
+    // Reinitialize the event listeners for all buttons
+    initializeAddToCartButtons();
+  });
+}
+
+// Function to attach event listeners to "Add to Plate" buttons
+function initializeAddToCartButtons() {
+  // Dynamically reselect all "Add to Plate" buttons
+  const addToCartButtons = document.querySelectorAll(".add-to-cart, #menu-container button");
+
+
+  // Attach event listener to each button
+  addToCartButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      showModal();
+    });
+  });
+}
+
+</body>
+</html>
