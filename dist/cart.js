@@ -1,54 +1,52 @@
+export let cart = JSON.parse(localStorage.getItem("cart"));
 
-export let cart = JSON.parse(localStorage.getItem('cart'));
-
-if(!cart){
-  cart =[
+if (!cart) {
+  cart = [
     {
-      productId: 'Italian-pizza',
-      quantity:1
-    }, {
-      productId: 'North-rajmachawal',
-      quantity:2
-    }
+      productId: "Italian-pizza",
+      quantity: 1,
+    },
+    {
+      productId: "North-rajmachawal",
+      quantity: 2,
+    },
   ];
 }
 
-function saveToStorage(){
-  localStorage.setItem('cart', JSON.stringify(cart))
-};
+function saveToStorage() {
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
 
-export function addToCart(productId){
-    let matchingItem;
-  
-      cart.forEach((cartItem) => {
-        if (productId === cartItem.productId) {
-          matchingItem = cartItem;
-        }
-      });
-  
-      if (matchingItem) {
-        matchingItem.quantity += 1;
-      } else {
-        cart.push({
-          productId: productId,
-          quantity: 1,
-        });
-      }
+export function addToCart(productId) {
+  let matchingItem;
 
-      saveToStorage();
-  };
+  cart.forEach((cartItem) => {
+    if (productId === cartItem.productId) {
+      matchingItem = cartItem;
+    }
+  });
 
-
-  export function removeFromCart(productId){
-    const newCart = [];
-
-    cart.forEach((cartItem)=>{
-      if(cartItem.productId !== productId){
-        newCart.push(cartItem);
-      }
+  if (matchingItem) {
+    matchingItem.quantity += 1;
+  } else {
+    cart.push({
+      productId: productId,
+      quantity: 1,
     });
-
-    cart = newCart;
-    saveToStorage();
   }
-  
+
+  saveToStorage();
+}
+
+export function removeFromCart(productId) {
+  const newCart = [];
+
+  cart.forEach((cartItem) => {
+    if (cartItem.productId !== productId) {
+      newCart.push(cartItem);
+    }
+  });
+
+  cart = newCart;
+  saveToStorage();
+}

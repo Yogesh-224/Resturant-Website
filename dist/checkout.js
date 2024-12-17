@@ -28,12 +28,28 @@ cart.forEach((cartItem)=>{
       </div>
     </div>
     <div class="flex items-center space-x-4">
-      <p class="text-lg font-bold">${matchingProduct.pricePaise/100}</p>
+      <p class="text-lg font-bold">&#8377;${matchingProduct.pricePaise/100}</p>
       <button class="text-red-600" id="js-delete-link" data-product-id="${matchingProduct.id}">
         <i class="fa-solid fa-circle-minus"></i>
       </button>
     </div>
   </div>
+  <div class="flex justify-between text-lg font-semibold ">
+          <span>Subtotal</span>
+          <span>&#8377;${matchingProduct.pricePaise/100}</span>
+        </div>
+        <div class="flex justify-between text-lg font-semibold mt-2">
+          <span>Taxes</span>
+          <span>&#8377;50</span>
+        </div>
+        <div class="flex justify-between text-lg font-semibold mt-2">
+          <span>Delivery Charges</span>
+          <span>&#8377;<del>60</del> Free Delivery</span>
+        </div>
+        <div class="flex justify-between text-xl font-bold mt-4">
+          <span>Total</span>
+          <span>&#8377;${matchingProduct.pricePaise/100 +50}</span>
+        </div>
         
 `;
 });
