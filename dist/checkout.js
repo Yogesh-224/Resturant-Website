@@ -17,7 +17,8 @@ cart.forEach((cartItem)=>{
     })
 
     cartSummaryHTML += 
-    ` <div class="flex items-center justify-between border-b pb-4">
+    ` <div class="flex items-center justify-between border-b pb-4 
+    js-cart-item-container-${matchingProduct.id}">
     <div class="flex items-center space-x-4">
       <img src="${matchingProduct.image}" alt="Dish Image" class="h-16 w-16 rounded object-cover" />
       <div>
@@ -43,6 +44,8 @@ document.querySelectorAll('#js-delete-link').forEach((link)=>{
 link.addEventListener('click',()=>{
   const productId = link.dataset.productId
   removeFromCart(productId);
-  console.log(cart)
+  
+  const container = document.querySelector(`.js-cart-item-container-${productId}`);
+  container.remove()
 })
 })
