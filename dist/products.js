@@ -56,58 +56,58 @@ export const products = [
         category: "North Indian"
     },
     {
-        id: "South-dosa",
+        id: "South-uttapam",
         image:'foodimg/south_sec/uttapam.jpg',
         name:'Tomato Uttapam',
         pricePaise: 12000,
         category: "South Indian"
     },
     {
-        id: "South-dosa",
+        id: "South-vada",
         image:'foodimg/south_sec/medu-vada.jpg',
         name:'Medu Vala',
         pricePaise: 12000,
         category: "South Indian"
     },
     {
-        id: "South-dosa",
+        id: "South-idli",
         image:'foodimg/south_sec/idli.jpg',
-        name:'Tomato Uttapam',
+        name:'Idli Sambhar',
         pricePaise: 12000,
         category: "South Indian"
     },
     {
         id: "South-dosa",
         image:'foodimg/south_sec/dosa.jpg',
-        name:'Tomato Uttapam',
-        pricePaise: 12000,
+        name:'Masala Dosa',
+        pricePaise: 14000,
         category: "South Indian"
     },
     {
         id: "Mexican-tacos",
         image:'foodimg/mexican_sec/tacos.jpg',
         name:'Tacos al pastor',
-        pricePaise: 12000,
+        pricePaise: 34000,
         category: "Mexican"
     },
     {
-        id: "Mexican-tacos",
+        id: "Mexican-guacamole",
         image:'foodimg/mexican_sec/guacamole.jpg',
         name:'Guacamole',
         pricePaise: 12000,
         category: "Mexican"
     },
     {
-        id: "Mexican-tacos",
+        id: "Mexican-burritos",
         image:'foodimg/mexican_sec/tacos.jpg',
-        name:'Tacos al pastor',
+        name:'Burritos',
         pricePaise: 12000,
         category: "Mexican"
     },
     {
-        id: "Mexican-tacos",
+        id: "Mexican-quesadillas",
         image:'foodimg/mexican_sec/tacos.jpg',
-        name:'Tacos al pastor',
+        name:'Quesadillas',
         pricePaise: 12000,
         category: "Mexican"
     },
@@ -140,28 +140,28 @@ export const products = [
         category: "Chinese"
     },
     {
-        id: "Mexican-tacos",
+        id: "Japanese-sushi",
         image:'foodimg/mexican_sec/tacos.jpg',
         name:'Sushi',
         pricePaise: 12000,
         category: "Japanese"
     },
     {
-        id: "Mexican-tacos",
+        id: "Japanese-udon",
         image:'foodimg/mexican_sec/tacos.jpg',
         name:'Udon',
         pricePaise: 12000,
         category: "Japanese"
     },
     {
-        id: "Mexican-tacos",
+        id: "Japanese-ramen",
         image:'foodimg/mexican_sec/tacos.jpg',
         name:'Ramen',
         pricePaise: 12000,
         category: "Japanese"
     },
     {
-        id: "Mexican-tacos",
+        id: "Japanese-sashimi",
         image:'foodimg/mexican_sec/tacos.jpg',
         name:'Sashimi',
         pricePaise: 12000,

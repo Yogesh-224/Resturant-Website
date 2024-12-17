@@ -6,7 +6,7 @@ const navDialog = document.getElementById("nav-dialog");
 const toggleButton = document.getElementById("toggleButton");
 const closeButton = document.getElementById("closeButton");
 
-function togglemenu() {
+export function togglemenu() {
   navDialog.classList.toggle("hidden");
   toggleButton.classList.toggle("hidden");
   closeButton.classList.toggle("hidden");
@@ -15,16 +15,16 @@ toggleButton.addEventListener("click", togglemenu);
 closeButton.addEventListener("click", togglemenu);
 
 // Loved-Dishes Section
-const lovedDishesContainer = document.querySelector("#most-loved-container");
+const lovedDishesContainer = document.getElementById("most-loved-container");
 
 const mostLovedProducts = [
   products.find((product) => product.id === "North-butterchicken"), // Butter-Chicken
   products.find((product) => product.id === "Italian-lasagna"), // Margherita Pizza
   products.find((product) => product.id === "Mexican-tacos"), // Tacos al pastor
-  products.find((product) => product.id === "South-dosa"), // Tomato Uttapam
+  products.find((product) => product.id === "South-idli"), // Tomato Uttapam
 ];
 
-let lovedDishesHTML = "";
+let lovedDishesHTML = '';
 mostLovedProducts.forEach((product) => {
   lovedDishesHTML += `
         <div class="w-64 h-80 rounded-xl flex flex-col justify-center items-center border-black border-solid border-2 mb-8 bg-slate-400 font-semibold">
@@ -162,8 +162,6 @@ function initializeAddToCartButtons() {
     });
   });
 }
-
-// Initialize the "Add to Plate" buttons
 initializeAddToCartButtons();
 
 // increase cart quantity feature
@@ -183,5 +181,7 @@ document.querySelectorAll(".js-add-to-cart")
     const productId = button.dataset.productId;
     addToCart(productId);    
     updateCartQuantity(); 
+    console.log('check')
   });
 });
+

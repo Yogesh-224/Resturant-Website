@@ -111,37 +111,17 @@
   <main class="container mx-auto px-4 py-8">
     <h2 class="text-3xl font-semibold text-center mb-6">Your Cart</h2>
     <div class="bg-white p-6 rounded shadow-lg">
-      <!-- Item List -->
-      <div class="flex flex-col space-y-4">
-        <!-- Example Cart Item -->
-        <div class="flex items-center justify-between border-b pb-4">
-          <div class="flex items-center space-x-4">
-            <img src="foodimg/north_indian.jpg" alt="Dish Image" class="h-16 w-16 rounded object-cover" />
-            <div>
-              <h3 class="text-lg font-semibold">North-Indian Thali</h3>
-              <p class="text-sm text-gray-500">Quantity: 1</p>
-              <p class="text-sm text-gray-500">Plate-size: half</p>
-            </div>
-          </div>
-          <p class="text-lg font-bold">$12.99</p>
-        </div>
 
-        <div class="flex items-center justify-between border-b pb-4">
-          <div class="flex items-center space-x-4">
-            <img src="foodimg/italian_food.jpg" alt="Dish Image" class="h-16 w-16 rounded object-cover" />
-            <div>
-              <h3 class="text-lg font-semibold">Pasta Italiano</h3>
-              <p class="text-sm text-gray-500">Quantity: 2</p>
-              <p class="text-sm text-gray-500">Plate-size: full</p>
-            </div>
-          </div>
-          <p class="text-lg font-bold">$24.99</p>
-        </div>
+      <!-- Item List -->
+      <div class="flex flex-col space-y-4 js-order-summary">
+        
+
+        
       </div>
 
       <!-- Cart Summary -->
       <div class="mt-6 border-t pt-4">
-        <div class="flex justify-between text-lg font-semibold">
+        <div class="flex justify-between text-lg font-semibold ">
           <span>Subtotal</span>
           <span>$37.98</span>
         </div>
@@ -176,6 +156,6 @@
     </div>
   </footer>
 
-  <script type="module" src="script.js"></script>
+  <script type="module" src="checkout.js"></script>
 </body>
 </html>

@@ -1,4 +1,13 @@
-export const cart =[];
+
+export let cart =[
+  {
+    productId: 'Italian-pizza',
+    quantity:1
+  }, {
+    productId: 'North-rajmachawal',
+    quantity:2
+  }
+];
 
 export function addToCart(productId){
     let matchingItem;
@@ -17,5 +26,17 @@ export function addToCart(productId){
           quantity: 1,
         });
       }
+  };
+
+  export function removeFromCart(productId){
+    const newCart = [];
+
+    cart.forEach((cartItem)=>{
+      if(cartItem.productId !== productId){
+        newCart.push(cartItem);
+      }
+    });
+
+    cart = newCart;
   }
   
