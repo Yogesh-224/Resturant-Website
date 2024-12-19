@@ -1,6 +1,6 @@
 import { products } from "./products.js";
 import { formatCurrency } from "./money.js";
-import { cart,addToCart } from "./cart.js";
+import { cart, addToCart } from "./cart.js";
 // Toogle menu for navbar
 const navDialog = document.getElementById("nav-dialog");
 const toggleButton = document.getElementById("toggleButton");
@@ -24,7 +24,7 @@ const mostLovedProducts = [
   products.find((product) => product.id === "South-idli"), // Tomato Uttapam
 ];
 
-let lovedDishesHTML = '';
+let lovedDishesHTML = "";
 mostLovedProducts.forEach((product) => {
   lovedDishesHTML += `
         <div class="w-64 h-80 rounded-xl flex flex-col justify-center items-center border-black border-solid border-2 mb-8 bg-slate-400 font-semibold">
@@ -75,6 +75,7 @@ for (const [category, products] of Object.entries(categorizedProducts)) {
               <p class="text-gray-600"><i class="fa-solid fa-indian-rupee-sign"></i> ${formatCurrency(
                 product.pricePaise
               )}</p>
+             
               <button
                 class="bg-yellow-700 text-white px-4 py-2 mt-2 rounded-lg hover:bg-red-800 add-to-cart js-add-to-cart"
                 data-product-id="${product.id}"
@@ -83,6 +84,7 @@ for (const [category, products] of Object.entries(categorizedProducts)) {
               >
                 Add to Plate
               </button>
+              
             </div>
           `
           )
@@ -96,7 +98,7 @@ document.querySelector("#menu-container").innerHTML = menuHTML;
 
 // increase cart quantity feature
 
-function updateCartQuantity(){
+function updateCartQuantity() {
   let cartQuantity = 0;
 
   cart.forEach((item) => {
@@ -105,13 +107,39 @@ function updateCartQuantity(){
   document.querySelector(".js-cart-quantity").innerHTML = cartQuantity;
 }
 
-document.querySelectorAll(".js-add-to-cart")
-.forEach((button) => {
+document.querySelectorAll(".js-add-to-cart").forEach((button) => {
   button.addEventListener("click", () => {
     const productId = button.dataset.productId;
-    addToCart(productId);    
-    updateCartQuantity(); 
-    console.log('check')
+    addToCart(productId);
+    updateCartQuantity();
+    console.log("check");
   });
 });
 
+// Show "Added to Plate" message
+function showAddedToPlateMessage() {
+  const messageElement = document.getElementById("add-to-plate-message");
+
+  // Remove 'hidden' class to display the message
+  messageElement.classList.remove("hidden");
+  messageElement.classList.add("opacity-100");
+
+  // Set a timeout to hide the message after 3 seconds
+  setTimeout(() => {
+    messageElement.classList.remove("opacity-100");
+    messageElement.classList.add("opacity-0");
+
+    // After the fade-out, add 'hidden' class back to hide it completely
+    setTimeout(() => {
+      messageElement.classList.add("hidden");
+    }, 300); // Match this delay with the transition time
+  }, 3000); // Message stays for 3 seconds
+}
+
+// Event listener for the "Add to Plate" button
+document.querySelectorAll(".js-add-to-cart").forEach((button) => {
+  button.addEventListener("click", () => {
+    showAddedToPlateMessage();
+    // You can add the cart functionality here as well (add to cart logic)
+  });
+});

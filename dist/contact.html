@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <title>Contact Us</title>
+</head>
+
+<body class="bg-gray-100">
+    <header class="w-full text-xl text-white p-5 bg-red-900">
+        <div class="flex justify-between items-center flex-wrap relative">
+          <!-- Logo Section -->
+          <div class="mr-auto">
+            <img
+              src="logo/crazyforfood-high-resolution-logo-white-transparent.png"
+              alt="Logo"
+              class="h-32 hover:animate-spin-slow"
+            />
+          </div>
+  
+          <!-- Menu Items (visible on medium and larger screens) -->
+          <ul class="items-center gap-5 cursor-pointer text-2xl hidden md:flex">
+            <a href="index.html"
+              ><li
+                class="hover:text-yellow-400 hover:font-semibold hover:animate-bounce"
+              >
+                Home
+              </li></a
+            >
+            <li
+              class="hover:text-yellow-400 hover:font-semibold hover:animate-bounce"
+            >
+              <a href="#">Menu</a>
+            </li>
+            <li
+              class="hover:text-yellow-400 hover:font-semibold hover:animate-bounce"
+            ><a href="cart.html">
+              <i class="fa-solid fa-basket-shopping "><span class="text-lg ml-2 js-cart-quantity">0</span></i> 
+            </a>
+            </li>
+            <li
+              class="hover:text-yellow-400 hover:font-semibold hover:animate-bounce"
+            >
+              About
+            </li>
+            <li
+              class="hover:text-yellow-400 hover:font-semibold hover:animate-bounce"
+            >
+              Contact
+            </li>
+          </ul>
+  
+          <!-- Toggle Button for smaller screens (Hamburger icon) -->
+  
+          <button
+            id="toggleButton"
+            class="md:hidden p-4 text-2xl hover:border hover:border-white "
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+  
+          <button
+            class="text-2xl p-2 flex items-center justify-center hover:border hover:border-white md:hidden"
+          >
+          <a href="cart.html">
+            <i class="fa-solid fa-basket-shopping "><span class="text-lg ml-2 js-cart-quantity">0</span></i> 
+          </a>
+          </button>
+  
+          <!-- Close Button for smaller screens (X icon) -->
+          <button
+            id="closeButton"
+            class="md:hidden p-4 text-4xl hover:border hover:border-white hidden"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+  
+        <!-- Mobile Menu (hidden by default, shows when toggled) -->
+        <nav id="nav-dialog" class="menu hidden md:hidden bg-red-900 text-white">
+          <ul class="flex flex-col items-end gap-5 p-5">
+            <li>
+              <a
+                href="index.html"
+                class="hover:text-yellow-400 hover:font-semibold"
+                >Home</a
+              >
+            </li>
+            
+            <li>
+              <a href="#" class="hover:text-yellow-400 hover:font-semibold"
+                >Gallery</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-yellow-400 hover:font-semibold"
+                >About</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-yellow-400 hover:font-semibold"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+    <!-- Navbar -->
+     
+   <!-- Contact Page Content -->
+<div class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div class="w-full max-w-4xl mx-auto p-4">
+        <h1 class="text-3xl md:text-5xl font-bold text-center mb-6 text-gray-800">Contact Us</h1>
+        <p class="text-center text-gray-600 mb-8">Feel free to reach out to us with any inquiries, feedback, or just to say hello!</p>
+
+        <!-- Contact Form -->
+        <form action="contact.php" method="POST" class="bg-white p-6 rounded-lg shadow-md w-full md:w-2/3 lg:w-1/2 mx-auto">
+            <div class="mb-4">
+                <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Enter your name"
+                    required
+                >
+            </div>
+
+            <div class="mb-4">
+                <label for="email" class="block text-gray-700 font-medium mb-2">Your Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Enter your email"
+                    required
+                >
+            </div>
+
+            <div class="mb-6">
+                <label for="message" class="block text-gray-700 font-medium mb-2">Your Message</label>
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Write your message here..."
+                    required
+                ></textarea>
+            </div>
+
+            <div class="text-center">
+                <button
+                    type="submit"
+                    class="bg-blue-500 text-white font-bold py-2 px-6 rounded-lg hover:bg-blue-600 transition duration-300"
+                >
+                    Send Message
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-10">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-lg font-bold mb-2">About Us</h3>
+                    <p class="text-sm">
+                        Crazy For Food is dedicated to providing the best dining experience with a variety of cuisines and exceptional service. Join us for a meal that you won't forget!
+                    </p>
+                </div>
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-lg font-bold mb-2">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-yellow-400">Home</a></li>
+                        <li><a href="#" class="hover:text-yellow-400">Menu</a></li>
+                        <li><a href="#" class="hover:text-yellow-400">Gallery</a></li>
+                        <li><a href="#" class="hover:text-yellow-400">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-yellow-400">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-lg font-bold mb-2">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-yellow-400"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="hover:text-yellow-400"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="hover:text-yellow-400"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="hover:text-yellow-400"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 border-t border-gray-600 pt-6 text-center">
+                <p class="text-sm">&copy; 2024 Crazy For Food. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+<script type="module" src="script.js"></script>
+</body>
+
+</html>
