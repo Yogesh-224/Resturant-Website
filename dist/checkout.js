@@ -48,8 +48,8 @@ cart.forEach((cartItem) => {
 document.querySelector(".js-order-summary").innerHTML = cartSummaryHTML;
 
 // Update the delivery summary dynamically
-const deliveryCharge = 50; // Set a fixed delivery charge (if any)
-const totalWithDelivery = totalAmount + deliveryCharge;
+const taxes = 50; // Set a fixed delivery charge (if any)
+const totalWithDelivery = totalAmount + taxes;
 
 document.querySelector(".js-delivery-summary").innerHTML = `
   <div class="flex justify-between mb-2">
@@ -57,8 +57,8 @@ document.querySelector(".js-delivery-summary").innerHTML = `
     <p class="text-lg font-bold">&#8377;${totalAmount.toFixed(2)}</p>
   </div>
   <div class="flex justify-between mb-2">
-    <p class="text-sm text-gray-500">Delivery Charge:</p>
-    <p class="text-lg font-bold">&#8377;${deliveryCharge.toFixed(2)}</p>
+    <p class="text-sm text-gray-500">Taxes (GST+Resturant Charges):</p>
+    <p class="text-lg font-bold">&#8377;${taxes.toFixed(2)}</p>
   </div>
   <div class="flex justify-between border-t pt-2">
     <p class="text-sm text-gray-800 font-semibold">Grand Total:</p>
@@ -105,3 +105,16 @@ document.querySelectorAll(".js-delete-link").forEach((link) => {
     `;
   });
 });
+
+// Toogle menu for navbar
+const navDialog = document.getElementById("nav-dialog");
+const toggleButton = document.getElementById("toggleButton");
+const closeButton = document.getElementById("closeButton");
+
+function togglemenu() {
+  navDialog.classList.toggle("hidden");
+  toggleButton.classList.toggle("hidden");
+  closeButton.classList.toggle("hidden");
+}
+toggleButton.addEventListener("click", togglemenu);
+closeButton.addEventListener("click", togglemenu);

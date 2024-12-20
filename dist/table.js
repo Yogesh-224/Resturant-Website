@@ -37,3 +37,15 @@ form.addEventListener("submit", function(event) {
         event.preventDefault();
     }
 });
+// toggle function for small screen
+const navDialog = document.getElementById("nav-dialog");
+const toggleButton = document.getElementById("toggleButton");
+const closeButton = document.getElementById("closeButton");
+
+function togglemenu() {
+  navDialog.classList.toggle("hidden");
+  toggleButton.classList.toggle("hidden");
+  closeButton.classList.toggle("hidden");
+}
+toggleButton.addEventListener("click", togglemenu);
+closeButton.addEventListener("click", togglemenu);

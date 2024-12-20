@@ -11,105 +11,104 @@
     <title>Document</title>
 </head>
 <body class="relative min-h-screen">
-    <header class="w-full text-xl text-white p-5 bg-red-900">
-        <div class="flex justify-between items-center flex-wrap relative">
-          <!-- Logo Section -->
-          <div class="mr-auto">
-            <img
-              src="logo/crazyforfood-high-resolution-logo-white-transparent.png"
-              alt="Logo"
-              class="h-32 hover:animate-spin-slow"
-            />
-          </div>
-  
-          <!-- Menu Items (visible on medium and larger screens) -->
-          <ul class="items-center gap-5 cursor-pointer text-2xl hidden md:flex">
-            <a href="index.html"
-              ><li
-                class="hover:text-yellow-400 hover:font-semibold hover:animate-bounce"
-              >
-                Home
-              </li></a
-            >
-            <li
-              class="hover:text-yellow-400 hover:font-semibold hover:animate-bounce"
-            >
-              <a href="#">Menu</a>
-            </li>
-            <li
-              class="hover:text-yellow-400 hover:font-semibold hover:animate-bounce"
-            ><a href="cart.html">
-              <i class="fa-solid fa-basket-shopping "><span class="text-lg ml-2 js-cart-quantity">0</span></i> 
-            </a>
-            </li>
-            <li
-              class="hover:text-yellow-400 hover:font-semibold hover:animate-bounce"
-            >
-              About
-            </li>
-            <li
-              class="hover:text-yellow-400 hover:font-semibold hover:animate-bounce"
-            >
-              Contact
-            </li>
-          </ul>
-  
-          <!-- Toggle Button for smaller screens (Hamburger icon) -->
-  
-          <button
-            id="toggleButton"
-            class="md:hidden p-4 text-2xl hover:border hover:border-white "
-          >
-            <i class="fa-solid fa-bars"></i>
-          </button>
-  
-          <button
-            class="text-2xl p-2 flex items-center justify-center hover:border hover:border-white md:hidden"
-          >
-          <a href="cart.html">
-            <i class="fa-solid fa-basket-shopping "><span class="text-lg ml-2 js-cart-quantity">0</span></i> 
-          </a>
-          </button>
-  
-          <!-- Close Button for smaller screens (X icon) -->
-          <button
-            id="closeButton"
-            class="md:hidden p-4 text-4xl hover:border hover:border-white hidden"
-          >
-            <i class="fa-solid fa-xmark"></i>
-          </button>
-        </div>
-  
-        <!-- Mobile Menu (hidden by default, shows when toggled) -->
-        <nav id="nav-dialog" class="menu hidden md:hidden bg-red-900 text-white">
-          <ul class="flex flex-col items-end gap-5 p-5">
-            <li>
-              <a
-                href="index.html"
-                class="hover:text-yellow-400 hover:font-semibold"
-                >Home</a
-              >
-            </li>
-            
-            <li>
-              <a href="#" class="hover:text-yellow-400 hover:font-semibold"
-                >Gallery</a
-              >
-            </li>
-            <li>
-              <a href="#" class="hover:text-yellow-400 hover:font-semibold"
-                >About</a
-              >
-            </li>
-            <li>
-              <a href="#" class="hover:text-yellow-400 hover:font-semibold"
-                >Contact</a
-              >
-            </li>
-          </ul>
-        </nav>
-      </header>
+  <header class="w-full text-xl text-white p-5 bg-red-900">
+    <div class="flex justify-between items-center flex-wrap relative">
+      <!-- Logo Section -->
+      <div class="mr-auto">
+        <img
+          src="logo/crazyforfood-high-resolution-logo-white-transparent.png"
+          alt="Logo"
+          class="h-32 hover:animate-spin-slow"
+        />
+      </div>
 
+      <!-- Menu Items (visible on medium and larger screens) -->
+      <ul class="items-center gap-5 cursor-pointer text-2xl hidden md:flex">
+        <a href="index.html"
+          ><li
+            class="hover:text-yellow-400 hover:font-semibold hover:animate-bounce"
+          >
+            Home
+          </li></a
+        >
+        <li
+          class="hover:text-yellow-400 hover:font-semibold hover:animate-bounce"
+        >
+          <a href="onlineorder.html">Menu</a>
+        </li>
+        <li
+          class="hover:text-yellow-400 hover:font-semibold hover:animate-bounce"
+        ><a href="cart.html">
+          <i class="fa-solid fa-basket-shopping "><span class="text-lg ml-2 js-cart-quantity">0</span></i> 
+        </a>
+        </li>
+        <li
+          class="hover:text-yellow-400 hover:font-semibold hover:animate-bounce"
+        ><a href="about.html">
+          About</a>
+        </li>
+        <li
+          class="hover:text-yellow-400 hover:font-semibold hover:animate-bounce"
+        ><a href="gallery.html">
+          Gallery</a>
+        </li>
+      </ul>
+
+      <!-- Toggle Button for smaller screens (Hamburger icon) -->
+
+      <button
+        id="toggleButton"
+        class="md:hidden p-4 text-2xl hover:border hover:border-white "
+      >
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <button
+        class="text-2xl p-2 flex items-center justify-center hover:border hover:border-white md:hidden"
+      >
+      <a href="cart.html">
+        <i class="fa-solid fa-basket-shopping "><span class="text-lg ml-2 js-cart-quantity">0</span></i> 
+      </a>
+      </button>
+
+      <!-- Close Button for smaller screens (X icon) -->
+      <button
+        id="closeButton"
+        class="md:hidden p-4 text-4xl hover:border hover:border-white hidden"
+      >
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Menu (hidden by default, shows when toggled) -->
+    <nav id="nav-dialog" class="menu hidden md:hidden bg-red-900 text-white">
+      <ul class="flex flex-col items-end gap-5 p-5">
+        <li>
+          <a
+            href="index.html"
+            class="hover:text-yellow-400 hover:font-semibold"
+            >Home</a
+          >
+        </li>
+        
+        <li>
+          <a href="onlineorder.html" class="hover:text-yellow-400 hover:font-semibold"
+            >Menu</a
+          >
+        </li>
+        <li>
+          <a href="about.html" class="hover:text-yellow-400 hover:font-semibold"
+            >About</a
+          >
+        </li>
+        <li>
+          <a href="gallery.html" class="hover:text-yellow-400 hover:font-semibold"
+            >Gallery</a
+          >
+        </li>
+      </ul>
+    </nav>
+  </header>
       <div class="absolute inset-0 bg-cover bg-center opacity-70 z-[-1]"
         style="background-image: url('images/image1.jpg');"></div>
 
@@ -223,5 +222,6 @@
             </div>
         </div>
     </footer>
+    <script src="table.js"></script>
 </body>
 </html>
