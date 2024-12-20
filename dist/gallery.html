@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Crazy For Food</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body class="bg-gray-400">
+    <!-- Navbar -->
+    <header class="w-full text-xl text-white p-5 bg-red-900">
+        <div class="flex justify-between items-center flex-wrap relative">
+          <!-- Logo Section -->
+          <div class="mr-auto">
+            <img
+              src="logo/crazyforfood-high-resolution-logo-white-transparent.png"
+              alt="Logo"
+              class="h-32 hover:animate-spin-slow"
+            />
+          </div>
+  
+          <!-- Menu Items (visible on medium and larger screens) -->
+          <ul class="items-center gap-5 cursor-pointer text-2xl hidden md:flex">
+            <a href="index.html"
+              ><li
+                class="hover:text-yellow-400 hover:font-semibold hover:animate-bounce"
+              >
+                Home
+              </li></a
+            >
+            <li
+              class="hover:text-yellow-400 hover:font-semibold hover:animate-bounce"
+            >
+              <a href="#">Menu</a>
+            </li>
+            <li
+              class="hover:text-yellow-400 hover:font-semibold hover:animate-bounce"
+            ><a href="cart.html">
+              <i class="fa-solid fa-basket-shopping "><span class="text-lg ml-2 js-cart-quantity">0</span></i> 
+            </a>
+            </li>
+            <li
+              class="hover:text-yellow-400 hover:font-semibold hover:animate-bounce"
+            >
+              About
+            </li>
+            <li
+              class="hover:text-yellow-400 hover:font-semibold hover:animate-bounce"
+            >
+              Contact
+            </li>
+          </ul>
+  
+          <!-- Toggle Button for smaller screens (Hamburger icon) -->
+  
+          <button
+            id="toggleButton"
+            class="md:hidden p-4 text-2xl hover:border hover:border-white "
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+  
+          <button
+            class="text-2xl p-2 flex items-center justify-center hover:border hover:border-white md:hidden"
+          >
+          <a href="cart.html">
+            <i class="fa-solid fa-basket-shopping "><span class="text-lg ml-2 js-cart-quantity">0</span></i> 
+          </a>
+          </button>
+  
+          <!-- Close Button for smaller screens (X icon) -->
+          <button
+            id="closeButton"
+            class="md:hidden p-4 text-4xl hover:border hover:border-white hidden"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+  
+        <!-- Mobile Menu (hidden by default, shows when toggled) -->
+        <nav id="nav-dialog" class="menu hidden md:hidden bg-red-900 text-white">
+          <ul class="flex flex-col items-end gap-5 p-5">
+            <li>
+              <a
+                href="index.html"
+                class="hover:text-yellow-400 hover:font-semibold"
+                >Home</a
+              >
+            </li>
+            
+            <li>
+              <a href="#" class="hover:text-yellow-400 hover:font-semibold"
+                >Gallery</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-yellow-400 hover:font-semibold"
+                >About</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-yellow-400 hover:font-semibold"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+    <!-- Page Heading -->
+    <div class="bg-gray-700 text-white py-12">
+        <h1 class="text-4xl text-center font-bold">Our Gallery</h1>
+        <p class="text-center text-lg mt-2">Explore the best moments and delicious dishes from Crazy For Food.</p>
+    </div>
+
+    <!-- Gallery Section -->
+    <div class="container mx-auto py-10 px-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Gallery images with hover zoom-out effect -->
+            <div class="relative group">
+                <div class="w-full h-64 bg-cover bg-center rounded-lg transform transition-transform duration-300 group-hover:scale-110"
+                    style="background-image: url('images/pexels-cedric-fauntleroy-7220886.jpg');"></div>
+            </div>
+            <div class="relative group">
+                <div class="w-full h-64 bg-cover bg-center rounded-lg transform transition-transform duration-300 group-hover:scale-110"
+                    style="background-image: url('images/pexels-dana-tentis-118658-262959.jpg');"></div>
+            </div>
+            <div class="relative group">
+                <div class="w-full h-64 bg-cover bg-center rounded-lg transform transition-transform duration-300 group-hover:scale-110"
+                    style="background-image: url('images/pexels-elletakesphotos-2696064.jpg');"></div>
+            </div>
+            <div class="relative group">
+                <div class="w-full h-64 bg-cover bg-center rounded-lg transform transition-transform duration-300 group-hover:scale-110"
+                    style="background-image: url('images/bg-image2.jpg');"></div>
+            </div>
+            <div class="relative group">
+                <div class="w-full h-64 bg-cover bg-center rounded-lg transform transition-transform duration-300 group-hover:scale-110"
+                    style="background-image: url('images/pexels-pixabay-262978.jpg');"></div>
+            </div>
+            <div class="relative group">
+                <div class="w-full h-64 bg-cover bg-center rounded-lg transform transition-transform duration-300 group-hover:scale-110"
+                    style="background-image: url('images/pexels-valeriya-842571.jpg');"></div>
+            </div>
+            <div class="relative group">
+                <div class="w-full h-64 bg-cover bg-center rounded-lg transform transition-transform duration-300 group-hover:scale-110"
+                    style="background-image: url('images/pexels-pixabay-262978.jpg');"></div>
+            </div>
+            <div class="relative group">
+                <div class="w-full h-64 bg-cover bg-center rounded-lg transform transition-transform duration-300 group-hover:scale-110"
+                    style="background-image: url('images/pexels-kyleroxas-2122294.jpg');"></div>
+            </div>
+            <div class="relative group">
+                <div class="w-full h-64 bg-cover bg-center rounded-lg transform transition-transform duration-300 group-hover:scale-110"
+                    style="background-image: url('images/bg-image-3.jpg');"></div>
+            </div>
+            <div class="relative group">
+                <div class="w-full h-64 bg-cover bg-center rounded-lg transform transition-transform duration-300 group-hover:scale-110"
+                    style="background-image: url('images/pexels-flodahm-541216.jpg');"></div>
+            </div>
+            <div class="relative group">
+                <div class="w-full h-64 bg-cover bg-center rounded-lg transform transition-transform duration-300 group-hover:scale-110"
+                    style="background-image: url('images/pexels-rachel-claire-8112676.jpg');"></div>
+            </div>
+            <div class="relative group">
+                <div class="w-full h-64 bg-cover bg-center rounded-lg transform transition-transform duration-300 group-hover:scale-110"
+                    style="background-image: url('images/bg-img-4.jpg');"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-10">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2024 Crazy For Food. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

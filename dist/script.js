@@ -67,26 +67,30 @@ for (const [category, products] of Object.entries(categorizedProducts)) {
         ${products
           .map(
             (product) => `
-            <div class="flex flex-col items-center p-4 shadow-lg bg-white rounded-lg w-60">
-              <img src="${product.image}" alt="${
-              product.name
-            }" class="w-52 h-44 rounded-sm object-cover mb-4" />
-              <h5 class="text-lg font-medium">${product.name}</h5>
-              <p class="text-gray-600"><i class="fa-solid fa-indian-rupee-sign"></i> ${formatCurrency(
-                product.pricePaise
-              )}</p>
-             
-              <button
-                class="bg-yellow-700 text-white px-4 py-2 mt-2 rounded-lg hover:bg-red-800 add-to-cart js-add-to-cart"
-                data-product-id="${product.id}"
-                data-product-name="${product.name}"
-                data-product-price="${product.pricePaise}"
-              >
-                Add to Plate
-              </button>
-              
-            </div>
-          `
+            <div 
+  class="flex flex-col items-center p-4 shadow-lg bg-white rounded-lg w-60 transform transition-transform duration-300 hover:scale-105"
+>
+  <img 
+    src="${product.image}" 
+    alt="${product.name}" 
+    class="w-52 h-44 rounded-sm object-cover mb-4"
+  />
+  <h5 class="text-lg font-medium">${product.name}</h5>
+  <p class="text-gray-600">
+    <i class="fa-solid fa-indian-rupee-sign"></i> ${formatCurrency(product.pricePaise)}
+  </p>
+  
+  <button
+    class="bg-yellow-700 text-white px-4 py-2 mt-2 rounded-lg hover:bg-red-800 add-to-cart js-add-to-cart"
+    data-product-id="${product.id}"
+    data-product-name="${product.name}"
+    data-product-price="${product.pricePaise}"
+  >
+    Add to Plate
+  </button>
+</div>
+
+     `
           )
           .join("")}
       </div>
