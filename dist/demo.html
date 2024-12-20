@@ -3,74 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
   <title>Document</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  // Popup before add-to-cart for quantity customisation
-// Select the modal container
-const modalContainer = document.querySelector(".modal-container");
-
-// Save the original HTML content of the modal-container
-const originalHTML = modalContainer.innerHTML;
-
-// Function to show the modal
-function showModal() {
-  const modalHTML = `
-    <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-10">
-      <div class="bg-gray-400 text-black p-6 rounded-lg w-2/3 h-auto">
-        <div class="flex items-center">
-          <p class="text-4xl font-extrabold">Please select the quantity</p>
-          <button class="ml-auto" id="cancel-btn">
-            <i class="fa-regular fa-rectangle-xmark text-4xl"></i>
-          </button>
+  <div class="bg-gray-400 py-12">
+    <h2 class="text-2xl md:text-4xl text-center font-bold text-red-800 mb-10">What Our Customers Say</h2>
+    <div class="flex flex-wrap justify-center gap-8">
+        <!-- Testimonial Card 1 -->
+        <div class="relative group w-96 h-64 bg-red-900 rounded-xl shadow-lg overflow-hidden">
+            <div
+                class="absolute inset-0 bg-red-900 text-white p-6 flex flex-col justify-center items-center rounded-xl transform transition-transform duration-500 group-hover:rotate-y-180 backface-hidden">
+                <p class="italic text-center mb-4 text-lg leading-relaxed">
+                    "The food was absolutely amazing, and the service was top-notch. A must-visit for food lovers!"
+                </p>
+                <div class="text-center font-bold">- Priya Sharma</div>
+            </div>
+            <div
+                class="absolute inset-0 bg-yellow-400 text-gray-800 p-6 flex flex-col justify-center items-center rounded-xl transform rotate-y-180 transition-transform duration-500 group-hover:rotate-y-0 backface-hidden">
+                <h3 class="text-2xl font-bold mb-2">Loved by Everyone!</h3>
+                <p class="text-center text-sm">Experience exceptional food and ambiance that keeps our customers coming back.</p>
+            </div>
         </div>
 
-        <p class="p-2 text-xl font-semibold font-sans border-b-2 mt-2">Dish Name</p>
+        <!-- Testimonial Card 2 -->
+        <div class="relative group w-96 h-64 bg-red-900 rounded-xl shadow-lg overflow-hidden">
+            <div
+                class="absolute inset-0 bg-red-900 text-white p-6 flex flex-col justify-center items-center rounded-xl transform transition-transform duration-500 group-hover:rotate-y-180 backface-hidden">
+                <p class="italic text-center mb-4 text-lg leading-relaxed">
+                    "We loved the ambiance and the variety of dishes. The desserts were out of this world!"
+                </p>
+                <div class="text-center font-bold">- Arjun Mehta</div>
+            </div>
+            <div
+                class="absolute inset-0 bg-yellow-400 text-gray-800 p-6 flex flex-col justify-center items-center rounded-xl transform rotate-y-180 transition-transform duration-500 group-hover:rotate-y-0 backface-hidden">
+                <h3 class="text-2xl font-bold mb-2">Unforgettable Meals</h3>
+                <p class="text-center text-sm">Discover the flavors and hospitality that make us unique.</p>
+            </div>
+        </div>
 
-        <form action="" class="p-4 text-xl">
-          <p class="p-2 font-semibold text-2xl">Choose your option</p>
-
-          <input type="radio" id="half-plate" name="plate-size" value="half-plate" />
-          <label for="half-plate" class="p-4">Half-plate (Serves 1) &nbsp; &nbsp; 300</label>
-          <br />
-
-          <input type="radio" id="full-plate" name="plate-size" value="full-plate" />
-          <label for="full-plate" class="p-4">Full-plate (Serves 2-3) &nbsp; 550/-</label><br />
-
-          <input type="submit" value="Submit" id="confirm-btn" class="h-16 w-52 bg-green-800 text-white rounded-xl mt-6" />
-        </form>
-      </div>
+        <!-- Testimonial Card 3 -->
+        <div class="relative group w-96 h-64 bg-red-900 rounded-xl shadow-lg overflow-hidden">
+            <div
+                class="absolute inset-0 bg-red-900 text-white p-6 flex flex-col justify-center items-center rounded-xl transform transition-transform duration-500 group-hover:rotate-y-180 backface-hidden">
+                <p class="italic text-center mb-4 text-lg leading-relaxed">
+                    "A fantastic place to dine with friends and family. Highly recommended!"
+                </p>
+                <div class="text-center font-bold">- Sneha Kapoor</div>
+            </div>
+            <div
+                class="absolute inset-0 bg-yellow-400 text-gray-800 p-6 flex flex-col justify-center items-center rounded-xl transform rotate-y-180 transition-transform duration-500 group-hover:rotate-y-0 backface-hidden">
+                <h3 class="text-2xl font-bold mb-2">Perfect Dining Spot</h3>
+                <p class="text-center text-sm">Join us for an experience that blends great food and wonderful service.</p>
+            </div>
+        </div>
     </div>
-  `;
-
-  // Insert the modalHTML into the modal-container
-  modalContainer.innerHTML = modalHTML;
-
-  // Attach event listener to the cancel button
-  const cancelBtn = document.getElementById("cancel-btn");
-  cancelBtn.addEventListener("click", () => {
-    // Revert modal-container back to its original HTML
-    modalContainer.innerHTML = lovedDishesHTML;
-
-    // Reinitialize the event listeners for all buttons
-    initializeAddToCartButtons();
-  });
-}
-
-// Function to attach event listeners to "Add to Plate" buttons
-function initializeAddToCartButtons() {
-  // Dynamically reselect all "Add to Plate" buttons
-  const addToCartButtons = document.querySelectorAll(".add-to-cart, #menu-container button");
-
-
-  // Attach event listener to each button
-  addToCartButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      showModal();
-    });
-  });
-}
+</div>
 
 </body>
 </html>
