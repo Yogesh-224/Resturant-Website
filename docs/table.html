@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <title>Document</title>
+</head>
+<body class="relative min-h-screen">
+  <header class="w-full text-xl text-white p-5 bg-red-900">
+    <div class="flex justify-between items-center flex-wrap relative">
+      <!-- Logo Section -->
+      <div class="mr-auto">
+        <img
+          src="logo/crazyforfood-high-resolution-logo-white-transparent.png"
+          alt="Logo"
+          class="h-32 hover:animate-spin-slow"
+        />
+      </div>
+
+      <!-- Menu Items (visible on medium and larger screens) -->
+      <ul class="items-center gap-5 cursor-pointer text-2xl hidden md:flex">
+        <a href="index.html"
+          ><li
+            class="hover:text-yellow-400 hover:font-semibold hover:animate-bounce"
+          >
+            Home
+          </li></a
+        >
+        <li
+          class="hover:text-yellow-400 hover:font-semibold hover:animate-bounce"
+        >
+          <a href="onlineorder.html">Menu</a>
+        </li>
+        <li
+          class="hover:text-yellow-400 hover:font-semibold hover:animate-bounce"
+        ><a href="cart.html">
+          <i class="fa-solid fa-basket-shopping "><span class="text-lg ml-2 js-cart-quantity">0</span></i> 
+        </a>
+        </li>
+        <li
+          class="hover:text-yellow-400 hover:font-semibold hover:animate-bounce"
+        ><a href="about.html">
+          About</a>
+        </li>
+        <li
+          class="hover:text-yellow-400 hover:font-semibold hover:animate-bounce"
+        ><a href="gallery.html">
+          Gallery</a>
+        </li>
+      </ul>
+
+      <!-- Toggle Button for smaller screens (Hamburger icon) -->
+
+      <button
+        id="toggleButton"
+        class="md:hidden p-4 text-2xl hover:border hover:border-white "
+      >
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <button
+        class="text-2xl p-2 flex items-center justify-center hover:border hover:border-white md:hidden"
+      >
+      <a href="cart.html">
+        <i class="fa-solid fa-basket-shopping "><span class="text-lg ml-2 js-cart-quantity">0</span></i> 
+      </a>
+      </button>
+
+      <!-- Close Button for smaller screens (X icon) -->
+      <button
+        id="closeButton"
+        class="md:hidden p-4 text-4xl hover:border hover:border-white hidden"
+      >
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Menu (hidden by default, shows when toggled) -->
+    <nav id="nav-dialog" class="menu hidden md:hidden bg-red-900 text-white">
+      <ul class="flex flex-col items-end gap-5 p-5">
+        <li>
+          <a
+            href="index.html"
+            class="hover:text-yellow-400 hover:font-semibold"
+            >Home</a
+          >
+        </li>
+        
+        <li>
+          <a href="onlineorder.html" class="hover:text-yellow-400 hover:font-semibold"
+            >Menu</a
+          >
+        </li>
+        <li>
+          <a href="about.html" class="hover:text-yellow-400 hover:font-semibold"
+            >About</a
+          >
+        </li>
+        <li>
+          <a href="gallery.html" class="hover:text-yellow-400 hover:font-semibold"
+            >Gallery</a
+          >
+        </li>
+      </ul>
+    </nav>
+  </header>
+      <div class="absolute inset-0 bg-cover bg-center opacity-70 z-[-1]"
+        style="background-image: url('images/image1.jpg');"></div>
+
+    <div class="container mx-auto px-4 py-16 relative z-10">
+
+        <!-- Booking Form Section -->
+        <div class="max-w-xl mx-auto bg-white  p-8 shadow-lg rounded-lg">
+
+
+            <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Book a Table</h2>
+
+            <form action="table.php" method="POST" class="space-y-6 form">
+
+    <!-- Number Input -->
+    <div>
+        <label class="block text-sm font-medium text-gray-700 mb-2">Mobile Number</label>
+        <input type="text" name="mobile" id="mobile"
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring focus:ring-indigo-200 focus:outline-none"
+            placeholder="Enter your mobile number" required>
+    </div>
+
+    <!-- Name Input -->
+    <div>
+        <label class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+        <input type="text" name="username" id="username"
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring focus:ring-indigo-200 focus:outline-none"
+            placeholder="Enter your full name" required>
+    </div>
+
+    <!-- Date Input -->
+    <div>
+        <label class="block text-sm font-medium text-gray-700 mb-2">Date</label>
+        <input type="date" name="date" id="date"
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring focus:ring-indigo-200 focus:outline-none"
+            required >
+    </div>
+
+    <!-- Time Input -->
+    <div>
+        <label class="block text-sm font-medium text-gray-700 mb-2">Time</label>
+        <input type="time" name="time" id="time"
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring focus:ring-indigo-200 focus:outline-none"
+            required>
+    </div>
+
+    <!-- Number of Guests -->
+    <div>
+        <label class="block text-sm font-medium text-gray-700 mb-2">Number of Guests</label>
+        <input type="number" name="usercount" id="usercount"
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring focus:ring-indigo-200 focus:outline-none"
+            placeholder="Enter number of guests" min="1" max="20" required>
+    </div>
+
+    <!-- Special Requests -->
+    <div>
+        <label class="block text-sm font-medium text-gray-700 mb-2">Special Requests</label>
+        <textarea name="userrequest" id="userrequest"
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring focus:ring-indigo-200 focus:outline-none"
+            rows="4" placeholder="Enter any special requests"></textarea>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="text-center">
+        <button type="submit" name="btn" id="btn"
+            class="w-full py-3 px-4 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition duration-300">
+            Book Now
+        </button>
+    </div>
+</form>
+
+        </div>
+    </div>
+
+    <footer class="bg-gray-700 text-white py-10 mt-5">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-lg font-bold mb-2">About Us</h3>
+                    <p class="text-sm">
+                        Crazy For Food is dedicated to providing the best dining experience with a variety of cuisines and exceptional service. Join us for a meal that you won't forget!
+                    </p>
+                </div>
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-lg font-bold mb-2">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-yellow-400">Home</a></li>
+                        <li><a href="#" class="hover:text-yellow-400">Menu</a></li>
+                        <li><a href="#" class="hover:text-yellow-400">Gallery</a></li>
+                        <li><a href="#" class="hover:text-yellow-400">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-yellow-400">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-yellow-400">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-lg font-bold mb-2">Subscribe to Our Newsletter</h3>
+                    <form action="#" method="POST" class="flex flex-col">
+                        <input type="email" placeholder="Enter your email" class="px-4 py-2 mb-2 rounded" required>
+                        <button type="submit" class="bg-yellow-500 text-gray-800 font-semibold py-2 rounded hover:bg-yellow-400">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+    
+            <div class="mt-8 border-t border-gray-600 pt-6">
+                <div class="flex justify-center space-x-4 mb-4">
+                    <a href="#" class="hover:text-yellow-400"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-yellow-400"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="hover:text-yellow-400"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-yellow-400"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <p class="text-center text-sm">&copy; 2024 Crazy For Food. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="table.js"></script>
+</body>
+</html>

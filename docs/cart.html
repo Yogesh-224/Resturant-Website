@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+  />
+  <title>Cart</title>
+</head>
+<body class="bg-gray-300">
+  <header class="w-full text-xl text-white p-5 bg-red-900">
+    <div class="flex justify-between items-center flex-wrap relative">
+      <!-- Logo Section -->
+      <div class="mr-auto">
+        <img
+          src="logo/crazyforfood-high-resolution-logo-white-transparent.png"
+          alt="Logo"
+          class="h-32 hover:animate-spin-slow"
+        />
+      </div>
+
+      <!-- Menu Items (visible on medium and larger screens) -->
+      <ul class="items-center gap-5 cursor-pointer text-2xl hidden md:flex">
+        <a href="index.html"
+          ><li
+            class="hover:text-yellow-400 hover:font-semibold hover:animate-bounce"
+          >
+            Home
+          </li></a
+        >
+        <li
+          class="hover:text-yellow-400 hover:font-semibold hover:animate-bounce"
+        >
+          <a href="onlineorder.html">Menu</a>
+        </li>
+        <li
+          class="hover:text-yellow-400 hover:font-semibold hover:animate-bounce"
+        ><a href="cart.html">
+          <i class="fa-solid fa-basket-shopping "><span class="text-lg ml-2 js-cart-quantity">0</span></i> 
+        </a>
+        </li>
+        <li
+          class="hover:text-yellow-400 hover:font-semibold hover:animate-bounce"
+        ><a href="about.html">
+          About</a>
+        </li>
+        <li
+          class="hover:text-yellow-400 hover:font-semibold hover:animate-bounce"
+        ><a href="gallery.html">
+          Gallery</a>
+        </li>
+        <li
+          class="hover:text-yellow-400 hover:font-semibold hover:animate-bounce"
+        ><a href="contact.html">
+          Contact</a>
+        </li>
+      </ul>
+
+      <!-- Toggle Button for smaller screens (Hamburger icon) -->
+
+      <button
+        id="toggleButton"
+        class="md:hidden p-4 text-2xl hover:border hover:border-white "
+      >
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <button
+        class="text-2xl p-2 flex items-center justify-center hover:border hover:border-white md:hidden"
+      >
+      <a href="cart.html">
+        <i class="fa-solid fa-basket-shopping "><span class="text-lg ml-2 js-cart-quantity">0</span></i> 
+      </a>
+      </button>
+
+      <!-- Close Button for smaller screens (X icon) -->
+      <button
+        id="closeButton"
+        class="md:hidden p-4 text-4xl hover:border hover:border-white hidden"
+      >
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Menu (hidden by default, shows when toggled) -->
+    <nav id="nav-dialog" class="menu hidden md:hidden bg-red-900 text-white">
+      <ul class="flex flex-col items-end gap-5 p-5">
+        <li>
+          <a
+            href="index.html"
+            class="hover:text-yellow-400 hover:font-semibold"
+            >Home</a
+          >
+        </li>
+        
+        <li>
+          <a href="onlineorder.html" class="hover:text-yellow-400 hover:font-semibold"
+            >Menu</a
+          >
+        </li>
+        <li>
+          <a href="about.html" class="hover:text-yellow-400 hover:font-semibold"
+            >About</a
+          >
+        </li>
+        <li>
+          <a href="contact.html" class="hover:text-yellow-400 hover:font-semibold"
+            >Contact</a
+          >
+        </li>
+        <li>
+          <a href="gallery.html" class="hover:text-yellow-400 hover:font-semibold"
+            >Gallery</a
+          >
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 py-8">
+    <h2 class="text-3xl font-semibold text-center mb-6">Your Cart</h2>
+    <div class="bg-white p-6 rounded shadow-lg">
+
+      <!-- Item List -->
+      <div class="flex flex-col space-y-4 js-order-summary">
+        <!-- dynamically generated through js -->
+      </div>
+
+      <!-- Cart Summary -->
+      <div class="mt-6 border-t pt-4 js-delivery-summary">
+       
+      </div>
+      
+      <!-- Estimated Delivery Time -->
+      <div class="text-center mt-6">
+        <p class="text-lg text-gray-600">Estimated Delivery Time:</p>
+        <p class="text-xl font-bold text-red-700">45-60 minutes</p>
+      </div>
+    </div>
+
+      <!-- Checkout Button -->
+      <div class="mt-6 text-center">
+        <button class="bg-red-700 text-white py-2 px-6 rounded hover:bg-red-600">Checkout</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-700 text-white py-10 mt-5">
+    <div class="container mx-auto px-4">
+      <p class="text-center text-sm">&copy; 2024 Crazy For Food. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="checkout.js"></script>
+</body>
+</html>
